@@ -52,7 +52,8 @@ python manage.py runserver
    password2).
    P.S. password and password2 must match (if they don't, appropriate error 
    is returned).
-   [1](https://user-images.githubusercontent.com/71542112/141826638-2683ef6e-df76-441b-b4cb-8ea79d9cf562.PNG)
+   ![1](https://user-images.githubusercontent.com/71542112/141827084-a65cd497-22bd-46ab-8ff5-1375b85cd17d.PNG)
+
 
 5. Send the request. It will return the following answer:
 ```
