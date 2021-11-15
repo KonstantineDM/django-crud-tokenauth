@@ -127,3 +127,13 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+##########################################
+
+# User files
+task.txt
+
+# User dirs
+/archive_v1_working
+/crudvenv
+/images
