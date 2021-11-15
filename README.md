@@ -39,6 +39,9 @@ Endpoint | HTTP Method | Operation
 ## How to use
 The API testing was conveyed through the service of [postman](https://www.postman.com/).
 
+0. Create an `.env` file in the project's root dir. Inside this file add a line 
+with a SECRET_KEY variable (format it according to contents of `.env.distrib`).
+
 1. Run the django server. Enter in terminal (from inside the dir with manage.py):
 ```
 python manage.py runserver
