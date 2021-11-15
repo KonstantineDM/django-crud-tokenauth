@@ -72,7 +72,7 @@ python manage.py runserver
 
 8. Access other API operations as described in paragraph 4.
 
-### Tests
+## Tests
 
 Both apps (authapp, crudapp) are supplied with some tests of API's functionality.
 To launch tests enter the following command in the terminal (while being inside 
