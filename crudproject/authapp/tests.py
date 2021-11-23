@@ -13,8 +13,8 @@ class UserTest(APITestCase):
         data = {
             'username': 'johndoe',
             'email': 'johndoe@gmail.com',
-            'password': '12345',
-            'password2': '12345',
+            'password': '12345A!',
+            'password2': '12345A!',
 
         }
         response = self.client.post(url, data, format='json')
@@ -36,7 +36,7 @@ class UserTest(APITestCase):
         url = reverse('authapp:login')
         data = {
             'username': 'johndoe',
-            'password': '12345',
+            'password': '12345A!',
         }
         response = self.client.post(url, data, format='json')
         

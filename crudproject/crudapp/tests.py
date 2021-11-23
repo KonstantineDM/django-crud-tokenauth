@@ -12,8 +12,8 @@ class AccountTest(APITestCase):
         data = {
             'username': 'johndoe',
             'email': 'johndoe@gmail.com',
-            'password': '12345',
-            'password2': '12345',
+            'password': '12345A!',
+            'password2': '12345A!',
 
         }
         response = self.client.post(url, data, format='json')
@@ -22,7 +22,7 @@ class AccountTest(APITestCase):
         url = reverse('authapp:login')
         data = {
             'username': 'johndoe',
-            'password': '12345',
+            'password': '12345A!',
         }
         response = self.client.post(url, data, format='json')
         self.token = response.data['token']
@@ -53,7 +53,7 @@ class AccountTest(APITestCase):
 
     def test_account_read(self):
         """Check if Account data can be read"""
-        url = reverse('crudapp:read', kwargs={'acc_id': self.acc_id})
+        url = reverse('crudapp:read', kwargs={'pk': self.acc_id})
         data = {}
         response = self.client.get(url, data, format='json')
 
@@ -73,7 +73,7 @@ class AccountTest(APITestCase):
     def test_account_update(self):
         """Check if created Account can be updated"""
         # Update an Account
-        url = reverse('crudapp:update', kwargs={'acc_id': self.acc_id})
+        url = reverse('crudapp:update', kwargs={'pk': self.acc_id})
         data = {
             'username': 'test1',
             'email': 'test1@gmail.com',
@@ -81,7 +81,7 @@ class AccountTest(APITestCase):
         self.client.put(url, data, format='json')
 
         # Read updated Account data
-        url = reverse('crudapp:read', kwargs={'acc_id': self.acc_id})
+        url = reverse('crudapp:read', kwargs={'pk': self.acc_id})
         data = {}
         response = self.client.get(url, data, format='json')
 
@@ -92,7 +92,7 @@ class AccountTest(APITestCase):
 
     def test_account_delete(self):
         """Check if Account is deleted properly"""
-        url = reverse('crudapp:delete', kwargs={'acc_id': self.acc_id})
+        url = reverse('crudapp:delete', kwargs={'pk': self.acc_id})
         data = {}
         response = self.client.delete(url, data, format='json')
 
