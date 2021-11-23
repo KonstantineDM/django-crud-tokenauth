@@ -134,6 +134,6 @@ dmypy.json
 task.txt
 
 # User dirs
-/archive_v1_working
+/archive_working
 /crudvenv
 /images
