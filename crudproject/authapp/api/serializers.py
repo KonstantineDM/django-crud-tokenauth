@@ -1,5 +1,7 @@
 from authapp.models import User
 from rest_framework import serializers
+from django.contrib.auth.password_validation import validate_password
+from django.core.exceptions import ValidationError
 
 
 class RegisterSerializer(serializers.ModelSerializer):
@@ -20,8 +22,14 @@ class RegisterSerializer(serializers.ModelSerializer):
         password = self.validated_data['password']
         password2 = self.validated_data['password2']
 
+        try:
+            validate_password(password=password, user=user)
+        except ValidationError as e:
+            raise serializers.ValidationError({'error': e.messages})
+
         if password != password2:
-            raise serializers.ValidationError({'password': 'Passwords must match.'})
+            raise serializers.ValidationError({'error': 'Passwords must match.'})
+
         user.set_password(password)
         user.save()
         return user
