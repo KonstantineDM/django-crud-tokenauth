@@ -6,7 +6,6 @@ from authapp.models import User
 
 
 class UserTest(APITestCase):
-
     def setUp(self):
         """Pre-register a User for login testing"""
         url = reverse('authapp:register')
